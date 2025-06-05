@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protodent</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!-- Encabezado con logo -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="assets/logo.png" alt="Logo del sitio" />
+    </a>
+    <h1>Protodent</h1>
+    <h2 class="subtitulo">Protocolo guía sobre cáncer oral</h2>
+  </header>
+
+  <!-- Encabezado principal de la página -->
+  <main>
+    <h1>Bienvenido a Protodent</h1>
+
+    <!-- Menú de navegación -->
+    <nav>
+      <ul class="menu-principal">
+
+        <!-- Sección Protocolo -->
+        <li class="menu-item">
+          <details class="custom-dropdown">
+            <summary>
+              <img src="assets/protocolo.png" alt="Gráfico Protocolo">
+              <h2>Protocolo</h2>
+            </summary>
+
+            <!-- Subítems de Protocolo -->
+            <div class="dropdown-content">
+              <a href="menu.html">Desplegar protocolo</a>
+            </div>
+            <div class="dropdown-content">
+              <a href="acerca_del_protocolo.html">Acerca del protocolo</a>
+            </div>
+          </details>
+        </li>
+
+        <!-- Sección Objetivos -->
+        <li class="menu-item">
+          <details class="custom-dropdown">
+            <summary>
+              <img src="assets/objetivos.png" alt="Gráfico Objetivos">
+              <h2>Objetivos</h2>
+            </summary>
+
+            <!-- Subítems de Objetivos -->
+            <div class="dropdown-content">
+              <a href="protocolo.html#general">Objetivo General</a>
+              <a href="protocolo.html#especificos">Objetivos Específicos</a>
+            </div>
+          </details>
+        </li>
+
+        <!-- Sección Bibliografía -->
+        <li class="menu-item">
+          <details class="custom-dropdown">
+            <summary>
+              <img src="assets/bibliografia.png" alt="Gráfico Bibliografía">
+              <h2>Bibliografía</h2>
+            </summary>
+
+            <!-- Subítems de Bibliografía -->
+            <div class="dropdown-content">
+              <a href="bibliografia.html#libros">Libros</a>
+              <a href="bibliografia.html#articulos">Artículos Académicos</a>
+              <a href="bibliografia.html#web">Referencias Web</a>
+            </div>
+          </details>
+        </li>
+
+      </ul>
+    </nav>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 protodent. en colaboracion con la Universidad de Cartagena.</p>
+    <p>Contacto: <a href="https://unicartagena.edu.co/">udc</a></p>
+    <img src="assets/escudo_universidad_de_cartagena.png" alt="escudo de la universidad de cartagena" />
+  </footer>
+</body>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js').then(registration => {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, error => {
+        console.log('ServiceWorker registration failed: ', error);
+      });
+    });
+  }
+</script>
+
+</html>
+
+

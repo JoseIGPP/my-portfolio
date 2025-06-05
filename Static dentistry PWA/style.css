@@ -1,0 +1,389 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 5px;
+}
+
+.subtitulo {
+    font-size: 0.7rem;
+    /* Ajusta el tamaño de la fuente */
+    color: #ebebeb;
+    /* Cambia el color del texto */
+    margin-left: -125px;
+    /* Ajusta el margenizquierdo para acercarlo al h1 */
+    margin-bottom: -40px;
+    /* Ajusta el margen superior para acercarlo al h1 */
+    font-weight: normal;
+    /* Cambia el peso de la fuente si es necesario */
+    animation: deslizar 2.1s ease;
+    animation-fill-mode: both;
+}
+
+
+/* Encabezado */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    background-color: #3a0ca3;
+    color: #f7f7f7;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.logo img,
+footer img {
+    height: 50px;
+    margin-right: 10px;
+    animation: deslizar 1.5s ease;
+    animation-fill-mode: both;
+
+}
+
+.header h1 {
+    font-size: 1.6em;
+    animation: deslizar 1.9s ease;
+    animation-fill-mode: both;
+}
+
+/* Estilo del Menú */
+.menu-principal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo de los Items del Menú */
+.menu-item {
+    margin: 40px 0;
+    border-radius: 20px;
+    overflow: hidden;
+    animation: bounceIn 2.3s ease;
+    animation-fill-mode: both;
+}
+
+/* Animación escalonada */
+.menu-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.menu-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.menu-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.menu-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.menu-item:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.menu-item:nth-child(6) {
+    animation-delay: 0.4s;
+}
+
+/* Dropdown Principal */
+.custom-dropdown {
+    width: 100%;
+    animation: bounceIn 0.5s ease;
+    animation-fill-mode: both;
+}
+
+.custom-dropdown summary {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: transparent;
+    color: #3a0ca3;
+    border: 2px solid #5a189a;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.custom-dropdown summary:hover {
+    background-color: #5a189a;
+    color: #ffffff;
+    border-color: #4c2fe0;
+}
+
+.custom-dropdown summary img {
+    height: 60px;
+    margin-right: 10px;
+
+    animation: aparecer-deslizar-rotar 0.9s ease;
+
+}
+
+.custom-dropdown summary h2 {
+    margin: 10px;
+}
+
+/* Contenido del Dropdown */
+.custom-dropdown .dropdown-content {
+    display: none;
+    padding: 10px;
+    background-color: #6b3ba500;
+    color: #ffffff;
+    border-radius: 20px;
+    transition: max-height 0.3s ease-out;
+    animation: aparecer-deslizar 1.5s ease;
+    animation-fill-mode: both;
+}
+
+.custom-dropdown[open] .dropdown-content {
+    display: block;
+    max-height: 500px;
+
+}
+
+/* Estilo de los Enlaces dentro del Dropdown */
+.custom-dropdown .dropdown-content a {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #3a0ca3;
+    /* Fondo morado */
+    color: #ffffff;
+    /* Texto blanco */
+    border-radius: 15px;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+}
+
+.custom-dropdown .dropdown-content a:hover {
+    background-color: #4c2fe0;
+}
+
+.custom-dropdown .dropdown-content a img {
+    height: 25px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* Botones Huecos (para los items principales) */
+.custom-dropdown summary,
+.custom-dropdown summary a.hollow-button {
+    background-color: transparent;
+    color: #1b0451;
+    border: 2px solid #5a189a;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.custom-dropdown summary:hover,
+.custom-dropdown summary a.hollow-button:hover {
+    background-color: #5a189a;
+    color: #ffffff;
+    border-color: #4c2fe0;
+}
+
+/* Animación de Rebote */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Media Query para Dispositivos Móviles */
+@media (max-width: 600px) {
+    .custom-dropdown summary {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .custom-dropdown summary img {
+        margin-bottom: 8px;
+    }
+
+    .custom-dropdown .dropdown-content {
+        padding: 8px;
+        text-align: left;
+    }
+
+    .custom-dropdown .dropdown-content a {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    .custom-dropdown .dropdown-content a img {
+        height: 20px;
+    }
+}
+
+@keyframes deslizar {
+    0% {
+        transform: translateX(-10%);
+    }
+
+    50% {
+        transform: translateX(calc(100vw - 70px));
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes aparecer-deslizar {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(20px);
+    }
+}
+
+@keyframes aparecer-deslizar-rotar {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(0) rotate(180deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(360deg);
+    }
+}
+
+/*#region Estilos para las secciones en protocolo.html */
+
+section {
+    padding: 3px;
+    margin: 50px auto;
+    /* Limita el ancho de las secciones para una mejor legibilidad */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Agrega sombra para un diseño más limpio */
+    opacity: 0;
+    /* Inicialmente invisible */
+    transform: translateY(20px);
+    /* Desplazamiento inicial */
+    animation: fadeInUp 0.8s ease forwards;
+    /* Aplica la animación */
+}
+
+/* Definición de la animación */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        /* Aparecer */
+        transform: translateY(0);
+        /* Posición final */
+    }
+}
+
+section h2 {
+    font-size: 1.5em;
+}
+
+section p {
+    font-size: 1em;
+    line-height: 1.6;
+    text-align: justify;
+    /* Mejora el espacio entre líneas */
+}
+
+
+
+
+/* Media query para secciones en pantallas pequeñas */
+@media (max-width: 600px) {
+    section {
+        margin: 10px;
+        /* Reduce el margen en pantallas pequeñas */
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 1.3em;
+    }
+
+    section p {
+        font-size: 1em;
+    }
+    section p img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*#endregion Estilos para las secciones en protocolo.html */
+
+html {
+    scroll-padding-top: 300px;
+    /* Ajusta el valor según la altura de tu header */
+}
+
+footer {
+    background-color: #33333300;
+    color: #840fe3;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    font-size: 1em;
+    animation: deslizar 1.1s ease;
+    animation-fill-mode: both;
+}
+
+.responsive-video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    /* Fondo negro para una mejor visualización del video */
+}
+
+.responsive-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
