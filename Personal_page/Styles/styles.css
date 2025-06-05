@@ -1,0 +1,469 @@
+/* Variables globales */
+:root {
+  --primary-color: #512597;
+  --primary-light: rgba(81, 37, 151, 0.1);
+  --text-color: #333;
+  --bg-dark: #2d3436;
+  --bg-light: #f5f5f5;
+  --background-color: #ffffff;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --border-radius: 10px;
+  --transition: all 0.3s ease;
+  --white: #ffffff;
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg-light);
+  color: var(#333);
+  font-size: 16px;
+}
+
+/* Utilidades */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-sm);
+}
+
+/* Layout principal */
+.cv-container {
+  display: flex;
+  gap: var(--spacing-lg);
+  max-width: 1200px;
+  margin: var(--spacing-lg) auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+/* Columna izquierda */
+.left-column {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: var(--spacing-lg);
+  width: 300px;
+  min-height: 100vh;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
+}
+
+/* Sección de perfil */
+.profile-section {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.profile-section img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid var(--background-color);
+  margin-bottom: var(--spacing-sm);
+  transition: var(--transition);
+  object-fit: cover;
+}
+
+.profile-section img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Elementos de contacto */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) 0;
+  transition: var(--transition);
+}
+
+.contact-item:hover {
+  transform: translateX(5px);
+}
+
+.contact-item a {
+  color: var(--background-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.contact-item a:hover {
+  opacity: 0.8;
+}
+
+/* Barras de progreso mejoradas */
+.progress-bar {
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  margin-top: var(--spacing-xs);
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--background-color);
+  border-radius: 3px;
+  width: var(--percent);
+  transition: var(--transition);
+}
+.languages-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+.language-item span {
+  /* Estilos para el texto (basic) */
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  
+}
+
+/* Hobbies con animaciones */
+.hobby-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+  
+}
+
+.hobby-item {
+  text-align: center;
+  transition: var(--transition);
+  background-color: #6200ff51;
+  border-radius: 10px;
+  padding: 12px;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  
+}
+
+.hobby-item:hover {
+  transform: translateY(-3px);
+}
+
+/* Columna derecha */
+.right-column {
+  background-color: var(--background-color);
+  padding: var(--spacing-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Títulos de sección */
+.section-title {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: var(--spacing-xs);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+/* Timeline mejorado */
+.timeline-item {
+  position: relative;
+  padding-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  transition: var(--transition);
+}
+
+.timeline-item:hover {
+  transform: translateX(5px);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.timeline-item:hover::before {
+  transform: scale(1.2);
+}
+
+/* Barras de habilidades animadas */
+.skill-bar {
+  height: 8px;
+  background-color: var(--primary-light);
+  border-radius: 4px;
+  margin-top: var(--spacing-xs);
+  overflow: hidden;
+}
+
+.skill-bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  width: calc(var(--level) * 10%);
+  transition: width 1s ease-in-out;
+}
+
+/* Proyectos con hover effect */
+.project-item {
+  padding: var(--spacing-sm);
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-sm);
+  transition: var(--transition);
+}
+.project-item a{
+  display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+.project-item a:hover {
+  background-color: #915dea;
+}
+
+.project-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Media queries mejorados */
+@media (max-width: 768px) {
+  .cv-container {
+    flex-direction: column;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .left-column {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .profile-section img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .right-column {
+    padding: var(--spacing-sm);
+  }
+
+  .hobby-icons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-lg: 1.5rem;
+    --spacing-md: 1rem;
+    --spacing-sm: 0.75rem;
+  }
+
+  .hobby-icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Estilos para la sección de tecnologías */
+.technology-icon {
+  margin-right: 0.5rem;
+  color: var(--primary-color);
+}
+
+.technology-item {
+  margin-bottom: 1rem;
+}
+
+.technology-bar {
+  height: 8px;
+  background-color: var(--primary-light);
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.technology-bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  width: calc(var(--level) * 10%);
+  transition: width 1s ease-in-out;
+}
+
+/* Estilos para la matriz adaptable */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Estilos para los paneles */
+.panel-card {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.panel-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.panel-card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.panel-level {
+  height: 6px;
+  background: var(--primary-light);
+  border-radius: 3px;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.panel-level::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: calc(var(--level) * 10%);
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+.panel-card span {
+  /* Estilos para el texto (basic) */
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background-color: var(--primary-color); 
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  color: var(--white);
+  
+}
+
+/* Ajusta el layout de los cards para acomodar los iconos */
+.skill-card, .tech-card {
+  text-align: center;
+  padding: 1.5rem 1rem;
+
+  padding: var(--spacing-sm);
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-sm);
+  transition: var(--transition);
+}
+
+.skill-card:hover, .tech-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-level, .tech-level {
+  height: 6px;
+  background: var(--primary-light);
+  border-radius: 3px;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.skill-level::after, .tech-level::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: calc(var(--level) * 10%);
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+.about {
+  margin-bottom: 1rem;
+  
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+}
+
+.about h2 {
+  color: var(--white);
+  margin-bottom: 1rem;
+  position: relative;
+  
+}
+
+.about h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.about p {
+  line-height: 1.8;
+  color: #ffffff;
+  text-align: justify;
+}
